@@ -6,24 +6,34 @@
 }
   
 body {
-    font-family: 'Open Sans', sans-serif; /* brødtekst */
-    color: #333;
+    font-family:'Jaldi', sans-serif;
+    color: #232323;
     line-height: 1.6;
-    background-color: #fff;
+    background-color: #FDFDFD;
 }
 
 
+/* Passion One kun til hero og banner titlet */
+.hero__title,
+.volunteer-banner__title {
+    font-family: 'Passion One', sans-serif;
+}
+
 /* Header */
 .header{
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 12px;
-  padding: 16px 32px;
-  background-color: #FDFDFD;  
-  border-bottom: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    padding: 16px 32px;
+    border-bottom: 2px;
+    background-color: #FDFDFD;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 } 
 
+/* Header Logo */
 .header__logo img {
     max-height: 50px;
     display: block;
@@ -31,7 +41,7 @@ body {
 
 /* Navigation */
 .header__nav {
-    margin-left: auto; /* Skubber navigationen helt til højre */
+    margin-left: auto; 
 }
 
 .nav__liste {
@@ -52,28 +62,32 @@ body {
 
 /* Main */
 
-/* ===== HERO ===== */
-.hero {
+/* HERO */
+.hero{
     position: relative;
-    background: url("img/Hero.png") center/cover no-repeat;
-    color: #FDFDFD;
-    text-align: center;
-    padding: 128px 16px;
-    font-family: 'Poppins', sans-serif; 
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
 }
-  
-.hero::after {
-    content: "";
+
+.hero__imge{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.hero__content{
     position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.45);
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 32px 16px;
+    color: #FDFDFD;
+  /* background: linear-gradient(to top, #232323, transparent); */
 }
-  
-.hero__content {
-    position: relative;
-    z-index: 1;
-}
-  
+
+
 .hero__title {
     font-size: 36px;
     font-weight: 700;
@@ -82,9 +96,31 @@ body {
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
+/* About Plexus */
+.about{
+    padding: 64px 0 32px;
+    text-align: center;
+}
+
+/* About Plexus - overskrift */
+.about__title{
+    font-size: 28px;
+    font-weight: 700;
+    color: #232323;
+    margin-bottom: 20px;
+}
+
+/* About Plexus - tekst */
+.about__text{
+    font-size: 17px;
+    color: #232323;
+    line-height: 1.6;
+    text-align: center;
+    margin: 0 auto;
+}
+
 /* Ikoner */
 .about-info {
-    background-color: #FDFDFD;
     padding: 48px 16px;
     text-align: center;
 }
@@ -96,106 +132,128 @@ body {
     max-width: 1000px;
     margin: 0 auto;
 }
-  
+
 .info-box__icon {
-    width: 60px;
+    width: 100px;
     margin-bottom: 12px;
 }
   
+/* Ikoner title */
 .info-box__title {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 700;
     margin-bottom: 4px;
-    color: #222;
+    color: #232323;
 }
-  
+
+/* Ikoner tekst */
 .info-box__text {
-    font-size: 15px;
-    color: #555;
+    font-size: 16px;
+    color: #232323;
     max-width: 240px;
     margin: 0 auto;
 }
 
-/* Volunteer */
+/* Banner sektion */
 .volunteer-banner {
     position: relative;
-    color: #fff;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
     text-align: center;
-    font-family: 'Poppins', sans-serif;
 }
   
+/* Banner billedet */
 .volunteer-banner__image {
     width: 100%;
-    height: 400px;
+    height: 100%;
     object-fit: cover;
-    filter: brightness(60%);
+    display: block;
 }
-  
+
+/* Banner teksten */
 .volunteer-banner__content {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    text-align: center;
 }
   
+/* Banner tekst */
 .volunteer-banner__title {
+    font-family: 'Passion One', sans-serif;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
     font-size: 32px;
-    font-weight: 700;
-    margin-bottom: 16px;
+    font-weight: 800;
+    color: #FDFDFD;
+    letter-spacing: 0.5px;
+    margin: 0;
 }
   
+/* Banner knap*/
 .volunteer-banner__button {
     background-color: #E14229;
     color: #FDFDFD;
-    padding: 12px 32px;
+    padding: 13px 24px;
     border-radius: 10px;
     font-weight: 700;
+    font-size: 18px;
     text-decoration: none;
-    transition: background 0.3s ease, color 0,3s ease, border 0.3s ease;
+    transition: all 0.3s ease;
 }
   
+/* Banner knap hover*/
 .volunteer-banner__button:hover {
-    background-color: #FDFDFD;
     color: #E14229;
+    background-color: #FDFDFD;
     border: 2px solid #E14229;
+    cursor: pointer;
 }
 
 
-/* ===== VOLUNTEER SECTION ===== */
+/* Bliv Frvillige  */
 .volunteer {
-    padding: 64px 16px;
+    padding: 64px 0;
     text-align: center;
 }
-  
+
+/* Title  */
 .volunteer__title {
     font-size: 32px;
     font-weight: 700;
     margin-bottom: 32px;
-    font-family: 'Poppins', sans-serif;
+    text-align: center;
 }
-  
+
+/* Teskt + bilede  */
 .volunteer__content {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     gap: 32px;
     max-width: 1000px;
     margin: 0 auto;
 }
   
+/* Tekst */
 .volunteer__text {
-    flex: 1;
-    min-width: 280px;
+    flex: 1 1 300px;
     text-align: left;
-    color: #555;
+    font-size: 16px;
+    line-height: 1.6;
 }
   
+/* Billede */
 .volunteer__image {
-    flex: 1;
-    min-width: 280px;
+    flex: 1 1 300px;
     max-width: 450px;
-    border-radius: 10px;  
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;  
 }
   
 
@@ -212,26 +270,154 @@ body {
     gap: 16px;
 } 
 
+/* Footer Logo */
 .footer__logo img{
    max-height: 50px;
    margin-bottom: 16px; 
 } 
 
+/* Footer sociale medier */
 .footer__socials img{
-  width: 28px;
-  margin: 0 8px;
-  transition: transform 0.2s ease;  
+    width: 28px;
+    margin: 0 8px;
+    transition: transform 0.2s ease;  
 } 
 
+/* Footer sociale medier hover*/
 .footer__socials img:hover{
-  transform: scale(1.1);  
+    transform: scale(1.2);  
 } 
 
+/* Footer informationer */
 .footer__info{
-  margin-top: 16px;
-  font-size: 14px;
-  color: #232323; 
-  line-height: 1.4; 
+    margin-top: 16px;
+    font-size: 14px;
+    color: #232323; 
+    line-height: 1.6;
+    text-align: right; 
 } 
 
 /* Responsive */
+
+/* Tablet 768px - 1024px */
+@media(max-width:1024px){
+    .header {
+        padding: 16px 24px;
+    }
+    
+    .nav__liste {
+        gap: 16px;
+    }
+    
+    .hero__title {
+        font-size: 28px;
+        max-width: 90%;
+    }
+    
+    .about__title {
+        font-size: 24px;
+    }
+    
+    .about__text,
+    .info-box__text {
+        font-size: 15px;
+        max-width: 90%;
+    }
+    
+    .info-box__icon {
+        width: 80px;
+    }
+    
+    .volunteer__title {
+        font-size: 28px;
+    }
+    
+    .volunteer__text {
+        font-size: 15px;
+    }
+    
+    .volunteer__image {
+        max-width: 100%;
+    }
+    
+    .volunteer__content {
+        flex-direction: column;
+        gap: 24px;
+    }
+    
+    .footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+    }
+    
+    .footer__info {
+        text-align: center;
+    }
+    
+}
+
+/* Mobil (max 767px)*/
+@media(max-width: 767px){
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 16px;
+    }
+    
+    .nav__liste {
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+    }
+    
+    .hero__title {
+        font-size: 24px;
+        max-width: 95%;
+        text-align: center;
+    }
+    
+    .about__title {
+        font-size: 22px;
+    }
+    
+    .about__text,
+    .info-box__text {
+        font-size: 14px;
+        max-width: 100%;
+    }
+    
+    .info-box__icon {
+        width: 60px;
+    }
+    
+    .volunteer__title {
+        font-size: 24px;
+    }
+    
+    .volunteer__content {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+    }
+    
+    .volunteer__text {
+        text-align: center;
+    }
+    
+    .volunteer__image {
+        max-width: 100%;
+    }
+    
+    .footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+    }
+    
+    .footer__info {
+        text-align: center;
+        font-size: 13px;
+    }
+}
