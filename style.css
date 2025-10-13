@@ -1,7 +1,8 @@
 /*  Generelt  */
 * {
     margin: 0;
-    padding: 0;
+    /*padding: 16px 24px;*/
+    padding: 0px;
     box-sizing: border-box;
 }
   
@@ -36,6 +37,7 @@ body {
 /* Header Logo */
 .header__logo img {
     max-height: 50px;
+    padding-left: 0px;
     display: block;
 }
 
@@ -60,6 +62,31 @@ body {
     color: #E14229;
 }
 
+/* Hamburger menu */
+/* Har hentet inspiration ud fra denne video på youtube https://www.youtube.com/watch?v=flItyHiDm7E */
+
+.header__toggle{
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: auto;
+    z-index: 1100;
+}
+
+.header__toggle-bar{
+    width: 100%;
+    height: 3px;
+    background-color: #232323;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+
 /* Main */
 
 /* HERO */
@@ -82,8 +109,9 @@ body {
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 32px 16px;
+    padding: 16px 24px;
     color: #FDFDFD;
+    text-align: left;
   /* background: linear-gradient(to top, #232323, transparent); */
 }
 
@@ -92,13 +120,13 @@ body {
     font-size: 36px;
     font-weight: 700;
     max-width: 750px;
-    margin: 0 auto;
+    margin: 0;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
 /* About Plexus */
 .about{
-    padding: 64px 0 32px;
+    padding: 16px 24px;
     text-align: center;
 }
 
@@ -112,37 +140,38 @@ body {
 
 /* About Plexus - tekst */
 .about__text{
-    font-size: 17px;
+    font-size: 16px;
     color: #232323;
     line-height: 1.6;
     text-align: center;
     margin: 0 auto;
+    padding: 16px 24px;
 }
 
 /* Ikoner */
 .about-info {
-    padding: 48px 16px;
+    padding: 16px 24px;
     text-align: center;
 }
   
 .about-info__grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 32px;
+    gap: 40px;
     max-width: 1000px;
     margin: 0 auto;
 }
 
 .info-box__icon {
-    width: 100px;
+    width: 120px;
     margin-bottom: 12px;
 }
   
 /* Ikoner title */
 .info-box__title {
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 700;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
     color: #232323;
 }
 
@@ -150,7 +179,7 @@ body {
 .info-box__text {
     font-size: 16px;
     color: #232323;
-    max-width: 240px;
+    max-width: 260px;
     margin: 0 auto;
 }
 
@@ -216,13 +245,13 @@ body {
 
 /* Bliv Frvillige  */
 .volunteer {
-    padding: 64px 0;
+    padding: 16px 24px;
     text-align: center;
 }
 
 /* Title  */
 .volunteer__title {
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 700;
     margin-bottom: 32px;
     text-align: center;
@@ -233,8 +262,8 @@ body {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
-    gap: 32px;
+    justify-content: center;
+    gap: 40px;
     max-width: 1000px;
     margin: 0 auto;
 }
@@ -263,7 +292,7 @@ body {
     justify-content: space-between;
     align-items: center;
     background: #FDFDFD;
-    padding: 32px 16px;
+    padding: 16px 24px;
     text-align: center;
     border-top:2px solid #FDFDFD ;
     flex-wrap: wrap;
@@ -291,19 +320,18 @@ body {
 /* Footer informationer */
 .footer__info{
     margin-top: 16px;
-    font-size: 14px;
+    font-size: 16px;
     color: #232323; 
     line-height: 1.6;
     text-align: right; 
 } 
 
+
 /* Responsive */
 
 /* Tablet 768px - 1024px */
 @media(max-width:1024px){
-    .header {
-        padding: 16px 24px;
-    }
+    
     
     .nav__liste {
         gap: 16px;
@@ -312,6 +340,7 @@ body {
     .hero__title {
         font-size: 28px;
         max-width: 90%;
+        text-align: left;
     }
     
     .about__title {
@@ -359,63 +388,130 @@ body {
 
 /* Mobil (max 767px)*/
 @media(max-width: 767px){
+
+    /* Header */
     .header {
-        flex-direction: column;
+        flex-direction: row;
         align-items: flex-start;
         gap: 8px;
         padding: 16px;
+        position: relative; /* Sørger for, at nav placeres korrekt */
     }
-    
+
+    /* Hamburger-menu */
+    .header__toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 28px;
+        height: 20px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        margin-left: auto;
+        z-index: 1100;
+    }
+
+    .header__toggle-bar {
+        width: 100%;
+        height: 3px;
+        background-color: #232323;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+
+    .header__toggle--active .header__toggle-bar:nth-child(1) {
+        transform: rotate(45deg) translate(5px,5px);
+    }
+
+    .header__toggle--active .header__toggle-bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .header__toggle--active .header__toggle-bar:nth-child(3) {
+        transform: rotate(-45deg) translate(5px,-5px);
+    }
+
+    /* Navigation */
+    .header__nav {
+        position: absolute;
+        top: 70px;
+        right: 16px;
+        width: 220px;
+        background-color: #FDFDFD;
+        border-radius: 8px;
+        padding: 16px;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+        z-index: 1000;
+    }
+
+    .header__nav--active {
+        opacity: 1;
+        visibility: visible;
+    }
+
     .nav__liste {
+        display: flex;
         flex-direction: column;
         gap: 12px;
-        width: 100%;
     }
-    
+
+    .nav__item {
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    /* Hero */
     .hero__title {
         font-size: 24px;
         max-width: 95%;
-        text-align: center;
+        text-align: left;
     }
-    
+
+    /* About */
     .about__title {
         font-size: 22px;
     }
-    
+
     .about__text,
     .info-box__text {
         font-size: 14px;
         max-width: 100%;
+        text-align: center;
     }
-    
+
     .info-box__icon {
         width: 60px;
     }
-    
+
+    /* Volunteer */
     .volunteer__title {
         font-size: 24px;
     }
-    
+
     .volunteer__content {
         flex-direction: column;
         align-items: center;
         gap: 16px;
     }
-    
+
     .volunteer__text {
         text-align: center;
     }
-    
+
     .volunteer__image {
         max-width: 100%;
     }
-    
+
+    /* Footer */
     .footer {
         flex-direction: column;
         text-align: center;
         gap: 8px;
     }
-    
+
     .footer__info {
         text-align: center;
         font-size: 13px;
