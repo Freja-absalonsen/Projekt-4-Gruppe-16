@@ -123,6 +123,97 @@ body {
     margin: 0;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
+/* Nedtælling starter her---------------------------------------------------------------------------------------*/
+.hero_timebox{
+  /* design-variabler */
+  --cd-bg: rgba(225, 66, 41, 0.92); /* rød baggrund, match din palette */
+  --cd-accent: #E14229;            /* rød tekst i tal-bokse */
+  --cd-text: #FFFFFF;              /* hvid tekst */
+  --cd-radius: 56px;
+
+  position: absolute; /* lægger boksen over hero-billedet */
+  top: 24px;
+  right: 24px;
+  z-index: 5;
+
+  background: var(--cd-bg);
+  color: var(--cd-text);
+  border-radius: var(--cd-radius);
+  padding: 16px 22px 12px;
+  box-shadow: 0 12px 28px rgba(0,0,0,.18);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+
+  /* bredden følger indhold; rør ikke øvrigt layout */
+  max-width: 90vw;
+}
+
+.hero_timebox > h1{
+  margin: 0 0 8px 6px;
+  color: var(--cd-text);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: .2px;
+}
+
+/* række med felter */
+.hero_timebox .timebox{
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  align-items: start;
+  column-gap: 22px;
+}
+
+/* hvert felt */
+.hero_timebox .time{
+  position: relative;
+  text-align: center;
+  padding-right: 10px; /* plads til kolon */
+}
+
+/* automatisk kolon mellem felter */
+.hero_timebox .time:not(:last-child)::after{
+  content: ":";
+  position: absolute;
+  right: -14px;
+  top: 2px;
+  font-weight: 800;
+  font-size: 34px;
+  line-height: 1;
+  color: var(--cd-text);
+  opacity: .95;
+}
+
+/* tal-boksen */
+.hero_timebox .time h2{
+  margin: 0;
+  padding: 8px 12px;
+  min-width: 64px;
+
+  background: #FFFFFF;
+  color: var(--cd-accent);
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(0,0,0,.18);
+
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+               "Liberation Mono","Courier New", monospace;
+  font-weight: 800;
+  font-size: 34px;
+  letter-spacing: 2px;
+  line-height: 1;
+}
+
+/* label under tal */
+.hero_timebox .time p{
+  margin: 6px 0 0;
+  color: var(--cd-text);
+  font-size: 12px;
+  line-height: 1.1;
+  opacity: .95;
+}
+/* Nedtælling slutter her---------------------------------------------------------------------------------------*/
+
 
 /* About Plexus */
 .about{
