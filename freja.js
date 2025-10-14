@@ -1,5 +1,6 @@
 
 /* Har hentet inspiration ud fra denne video på youtube  https://www.youtube.com/watch?v=flItyHiDm7E */
+/* skærmlæsning - aria-label  https://www.w3schools.com/accessibility/accessibility_labels.php */
 
 /* Fejlfinding: Tjekker om filen er korrekt linket */
 console.log('This file is working!')
