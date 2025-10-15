@@ -589,7 +589,7 @@ body {
         align-items: flex-start;
         gap: 8px;
         padding: 16px;
-        position: relative; /* Sørger for, at nav placeres korrekt */
+
     }
 
     /* Hamburger-menu */
@@ -628,7 +628,7 @@ body {
 
     /* Navigation */
     .header__nav {
-        position: absolute;
+        position: fixed;
         top: 70px;
         right: 16px;
         width: 220px;

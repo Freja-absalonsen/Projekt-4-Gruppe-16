@@ -31,7 +31,7 @@ toggleButton.addEventListener('click',()=>{
 
 /* Loop: Gennemløber menues elementer */
 for(let i = 0; i < navItems.length; i++){
-    navItems[i].addEventListener('click',function(){
+    navItems[i].addEventListener('click',()=>{
 
         navMenu.classList.remove('header__nav--active');
         toggleButton.classList.remove('header__toggle--active');
