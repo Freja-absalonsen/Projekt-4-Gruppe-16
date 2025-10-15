@@ -123,15 +123,18 @@ body {
     margin: 0;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
+
+
 /* Nedtælling starter her---------------------------------------------------------------------------------------*/
-.hero_timebox{
+/* Jeg benytter denne video til inspiration: https://www.youtube.com/watch?v=34kbdFLpff8*/
+.hero_timebox {
   /* design-variabler */
-  --cd-bg: rgba(225, 66, 41, 0.92); /* rød baggrund, match din palette */
-  --cd-accent: #E14229;            /* rød tekst i tal-bokse */
-  --cd-text: #FFFFFF;              /* hvid tekst */
+  --cd-bg: rgba(225, 66, 41, 0.92);
+  --cd-accent: #E14229;
+  --cd-text: #FFFFFF;
   --cd-radius: 56px;
 
-  position: absolute; /* lægger boksen over hero-billedet */
+  position: absolute;
   top: 24px;
   right: 24px;
   z-index: 5;
@@ -144,11 +147,11 @@ body {
   -webkit-backdrop-filter: blur(2px);
   backdrop-filter: blur(2px);
 
-  /* bredden følger indhold; rør ikke øvrigt layout */
   max-width: 90vw;
+  overflow: hidden;
 }
 
-.hero_timebox > h1{
+.hero_timebox > h1 {
   margin: 0 0 8px 6px;
   color: var(--cd-text);
   font-size: 16px;
@@ -158,22 +161,25 @@ body {
 }
 
 /* række med felter */
-.hero_timebox .timebox{
-  display: grid;
-  grid-template-columns: repeat(3, max-content);
-  align-items: start;
-  column-gap: 22px;
+.hero_timebox .timebox {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 22px;
+  flex-wrap: nowrap;       /* alt på én linje */
+  white-space: nowrap;
 }
 
 /* hvert felt */
-.hero_timebox .time{
+.hero_timebox .time {
   position: relative;
   text-align: center;
-  padding-right: 10px; /* plads til kolon */
+  flex: 0 0 auto;
+  padding-right: 10px;
 }
 
-/* automatisk kolon mellem felter */
-.hero_timebox .time:not(:last-child)::after{
+/* kolon mellem felter */
+.hero_timebox .time:not(:last-child)::after {
   content: ":";
   position: absolute;
   right: -14px;
@@ -186,7 +192,7 @@ body {
 }
 
 /* tal-boksen */
-.hero_timebox .time h2{
+.hero_timebox .time h2 {
   margin: 0;
   padding: 8px 12px;
   min-width: 64px;
@@ -205,12 +211,47 @@ body {
 }
 
 /* label under tal */
-.hero_timebox .time p{
+.hero_timebox .time p {
   margin: 6px 0 0;
   color: var(--cd-text);
   font-size: 12px;
   line-height: 1.1;
   opacity: .95;
+}
+
+/* 📱 Responsiv tilpasning */
+@media (max-width: 640px) {
+  .hero_timebox {
+    top: 12px;
+    right: 12px;
+    padding: 12px 16px 10px;
+    border-radius: 32px;
+  }
+
+  .hero_timebox > h1 {
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+
+  .hero_timebox .timebox {
+    gap: 12px;
+  }
+
+  .hero_timebox .time:not(:last-child)::after {
+    right: -10px;
+    top: 0;
+    font-size: 26px;
+  }
+
+  .hero_timebox .time h2 {
+    font-size: 24px;
+    min-width: 48px;
+    padding: 6px 8px;
+  }
+
+  .hero_timebox .time p {
+    font-size: 10px;
+  }
 }
 /* Nedtælling slutter her---------------------------------------------------------------------------------------*/
 
