@@ -253,6 +253,13 @@ body {
     font-size: 10px;
   }
 }
+
+/* Når man holder musen over nedtællingen */
+.hero_timebox:hover {
+  cursor: pointer;              /* ændrer markøren */
+  transform: scale(1.05);       /* giver lidt zoom-effekt */
+  transition: transform 0.3s ease;
+}
 /* Nedtælling slutter her---------------------------------------------------------------------------------------*/
 
 
