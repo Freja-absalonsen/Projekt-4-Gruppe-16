@@ -42,7 +42,7 @@ timer();
 const timerBox = document.querySelector(".hero_timebox");
 timerBox.addEventListener("mouseover", () => {
   timerBox.style.transform = "scale(1.05)";
-  timerBox.title = "Klik for at pause eller genstarte nedtællingen";
+  timerBox.title = "Næste arrangement";
 });
 timerBox.addEventListener("mouseout", () => {
   timerBox.style.transform = "scale(1)";
